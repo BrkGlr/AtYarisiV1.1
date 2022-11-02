@@ -11,7 +11,7 @@ namespace AtYarisiV1._1
        
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text = "At Yarýþý oyunu V. 1.1";
+            this.Text = "At YarÃ½Ã¾Ã½ oyunu V. 1.1";
 
             bakiye = 100;
             lblMisli1.Text = rnd.Next(1, 5).ToString();
@@ -36,7 +36,7 @@ namespace AtYarisiV1._1
                 bahis = Convert.ToInt32(txtBahis.Text);
                 if (bahis == 0)
                 {
-                    MessageBox.Show("Lütfen Bahis Girniz");
+                    MessageBox.Show("LÃ¼tfen Bahis Girniz");
                 }
                 else if (rdbAt1.Checked == true)
                 {
@@ -45,6 +45,7 @@ namespace AtYarisiV1._1
                         timer1.Start();
                         pctDurum.Show();
                         btnYeniden.Enabled = false;
+                        btnBasla.Enabled = false;
                     }
                 }
 
@@ -56,6 +57,7 @@ namespace AtYarisiV1._1
                         timer1.Start();
                         pctDurum.Show();
                         btnYeniden.Enabled = false;
+                        btnBasla.Enabled = false;
                     }
                 }
                 else if (rdbAt3.Checked == true)
@@ -65,6 +67,7 @@ namespace AtYarisiV1._1
                         timer1.Start();
                         pctDurum.Show();
                         btnYeniden.Enabled = false;
+                        btnBasla.Enabled = false;
                     }
                 }
                 else if (rdbAt4.Checked == true)
@@ -74,11 +77,12 @@ namespace AtYarisiV1._1
                         timer1.Start();
                         pctDurum.Show();
                         btnYeniden.Enabled = false;
+                        btnBasla.Enabled = false;
                     }
                 }
                 else 
                 {
-                    MessageBox.Show("Lütfen Bir Seçim Yapýnýz.");
+                    MessageBox.Show("LÃ¼tfen Bir SeÃ§im YapÃ½nÃ½z.");
                 }
 
 
@@ -89,7 +93,7 @@ namespace AtYarisiV1._1
             catch (Exception)
             {
 
-                MessageBox.Show("Lütfen Sayýsal Bir Deðer Giriniz");
+                MessageBox.Show("LÃ¼tfen SayÃ½sal Bir DeÃ°er Giriniz");
             }
             
             
@@ -161,25 +165,25 @@ namespace AtYarisiV1._1
             if (pctAt1.Left > durum)
             {
                 durum = pctAt1.Left;
-                lblDurum.Text = "1 Numaralý ÞahBatur Yarýþý Önde Götürüyor.";
+                lblDurum.Text = "1 NumaralÃ½ ÃžahBatur YarÃ½Ã¾Ã½ Ã–nde GÃ¶tÃ¼rÃ¼yor.";
                 pctDurum.Image = pctAt1.Image;
             }
             if (pctAt2.Left > durum)
             {
                 durum = pctAt2.Left;
-                lblDurum.Text = "2 Numaralý GülBatur Yarýþý Önde Götürüyor";
+                lblDurum.Text = "2 NumaralÃ½ GÃ¼lBatur YarÃ½Ã¾Ã½ Ã–nde GÃ¶tÃ¼rÃ¼yor";
                 pctDurum.Image = pctAt2.Image;
             }
             if (pctAt3.Left > durum)
             {
                 durum = pctAt3.Left;
-                lblDurum.Text = "3 Numaralý BozAyak Yarýþý Önde Götürüyor";
+                lblDurum.Text = "3 NumaralÃ½ BozAyak YarÃ½Ã¾Ã½ Ã–nde GÃ¶tÃ¼rÃ¼yor";
                 pctDurum.Image = pctAt3.Image;
             }
             if (pctAt4.Left > durum)
             {
                 durum = pctAt4.Left;
-                lblDurum.Text = "4 Numaralý KaraSevda Yarýþý Önde Götürüyor";
+                lblDurum.Text = "4 NumaralÃ½ KaraSevda YarÃ½Ã¾Ã½ Ã–nde GÃ¶tÃ¼rÃ¼yor";
                 pctDurum.Image = pctAt4.Image;
             }
 
@@ -187,9 +191,9 @@ namespace AtYarisiV1._1
             if (pctAt1.Right >= lblFinish.Left)
             {
                 timer1.Stop();
-                MessageBox.Show("1 Numaralý ÞahBatur kazandý");
+                MessageBox.Show("1 NumaralÃ½ ÃžahBatur kazandÃ½");
                 btnYeniden.Enabled = true;
-                
+                btnBasla.Enabled = false;
 
 
 
@@ -199,27 +203,27 @@ namespace AtYarisiV1._1
             else if (pctAt2.Right >= lblFinish.Left)
             {
                 timer1.Stop();
-                MessageBox.Show("2 Numaralý GülBatur kazandý");
+                MessageBox.Show("2 NumaralÃ½ GÃ¼lBatur kazandÃ½");
                 btnYeniden.Enabled = true;
-
+                btnBasla.Enabled = false;
                
 
             }
             else if (pctAt3.Right >= lblFinish.Left)
             {
                 timer1.Stop();
-                MessageBox.Show("3 Numaralý BozAyak kazandý.");
+                MessageBox.Show("3 NumaralÃ½ BozAyak kazandÃ½.");
                 btnYeniden.Enabled = true;
-               
+                btnBasla.Enabled = false;
 
 
             }
             else if (pctAt4.Right >= lblFinish.Left)
             {
                 timer1.Stop();
-                MessageBox.Show("4 Numaralý KaraSevda kazandý.");
+                MessageBox.Show("4 NumaralÃ½ KaraSevda kazandÃ½.");
                 btnYeniden.Enabled = true;
-                
+                btnBasla.Enabled = false;
 
             }
             if (pctAt1.Right >= lblFinish.Left && rdbAt1.Checked == true)
@@ -300,7 +304,7 @@ namespace AtYarisiV1._1
 
             lblKazanc.Text=("");
             txtBahis.Text = ("");
-
+            btnBasla.Enabled = true;
         }
 
     }
